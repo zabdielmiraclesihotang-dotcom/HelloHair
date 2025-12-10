@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Barberman</title>
+    <link rel="stylesheet" href="pendaftaran.css" />
+  </head>
+  <body>
+    <a href="daftar-barber.html" class="back-link"
+      >← Kembali ke Daftar Barberman</a
+    >
+
+    <h1>Form Pendaftaran Barberman</h1>
+
+    <form id="formDaftarBarber">
+      <label for="nama">Nama Barber:</label>
+      <input
+        type="text"
+        id="nama"
+        name="nama"
+        placeholder="Masukkan nama lengkap"
+        required
+      />
+
+      <label for="foto">Foto (file lokal):</label>
+      <input type="file" id="foto" name="foto" accept="image/*" />
+
+      <label for="layanan">Layanan (pisahkan dengan koma):</label>
+      <input
+        type="text"
+        id="layanan"
+        name="layanan"
+        placeholder="Pangkas Rambut, Hair Coloring"
+        required
+      />
+
+      <label for="wa">Link WhatsApp:</label>
+      <input
+        type="text"
+        id="wa"
+        name="wa"
+        placeholder="https://wa.me/... (opsional)"
+      />
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <script src="pendaftaran.js"></script>
+  </body>
+</html>

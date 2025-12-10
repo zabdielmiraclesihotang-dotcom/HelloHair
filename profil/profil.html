@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Pengguna</title>
+    <link rel="stylesheet" href="profil.css" />
+  </head>
+
+  <body>
+    <a href="../halaman utama/home.html" class="back-btn">← Kembali</a>
+
+    <header class="profile-header">
+      <h2>Profil Pengguna</h2>
+    </header>
+
+    <main>
+      <section class="profile-card">
+        <div class="profile-photo">
+          <img id="profileImage" src="default-profile.png" alt="Foto Profil" />
+          <label for="uploadPhoto" class="upload-btn">Ganti Foto</label>
+          <input type="file" id="uploadPhoto" accept="image/*" hidden />
+        </div>
+
+        <div class="profile-info">
+          <div class="info-row">
+            <span class="info-label">Nama Lengkap</span>
+            <span class="info-value" id="namaUser">-</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <span class="info-value" id="emailUser">-</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">Nomor WhatsApp</span>
+            <span class="info-value" id="waUser">-</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">Alamat</span>
+            <span class="info-value" id="alamatUser">-</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="logout-card">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </section>
+    </main>
+
+    <footer>© 2025 HomeStyle — Semua Hak Dilindungi</footer>
+
+    <script src="profil.js"></script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+:root {
+  --main-color: #fff;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-blur: 10px;
+  --smooth-transition: 0.25s ease-out;
+  --accent-color: #00ffc3;
+  --dark-overlay: rgba(0, 0, 0, 0.55);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* 🔥 Halaman turun lebih panjang */
+  font-family: "Poppins", sans-serif;
+  min-height: 120vh; /* 🔥 Tinggi halaman diperpanjang */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url("bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--main-color);
+  animation: fadeIn 0.7s ease-out both;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-overlay);
+  z-index: -1;
+}
+
+.header-halaman {
+  text-align: center;
+  padding: 70px 0 40px; /* 🔥 Sebelumnya 40px → diturunkan biar tidak mepet */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.header-halaman h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header-halaman p {
+  margin-top: 5px;
+  color: #e0e0e0;
+}
+
+.profile-link {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  display: block;
+  z-index: 10;
+  animation: fadeIn 1s ease-out both;
+}
+
+.profile-link img {
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  padding: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: var(--smooth-transition);
+}
+
+.profile-link:hover img {
+  transform: scale(1.12);
+}
+
+main {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.9s ease-out both;
+}
+
+.barber-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 30px 0;
+}
+
+.barber-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 22px;
+  padding: 25px;
+  color: var(--main-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform var(--smooth-transition),
+    box-shadow var(--smooth-transition);
+  animation: fadeInUp 1s ease-out both;
+  animation-delay: calc(var(--delay) * 0.1s);
+}
+
+.barber-card:hover {
+  transform: translateY(-6px) scale(1.03); /* 🔥 Efek hover lebih lembut & elegan */
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+.barber-photo {
+  width: 100%;
+  aspect-ratio: 1/1; /* 🔥 Foto selalu 1:1 */
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.barber-name {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.barber-rating {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.barber-address {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.barber-address a {
+  color: #00ffd0;
+  text-decoration: none;
+}
+
+.barber-address a:hover {
+  text-decoration: underline;
+}
+
+.btn-pilih {
+  margin-top: 22px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 13px 0;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #00ffc3, #00d4a7);
+  color: #000;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+  border: none;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-pilih:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, #00ffd0, #00e6ae);
+}
+
+.btn-pilih:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Tombol daftar barberman pojok kiri atas */
+.btn-daftar-barberman {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #00ffc3;
+  color: #000;
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.btn-daftar-barberman:hover {
+  background-color: #00d9a3;
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 25px 0;
+  margin-top: auto;
+  color: var(--main-color);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-out both;
+}
+
+footer a {
+  color: #00ffd0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 950px) {
+  main {
+    width: 95%;
+  }
+}
+
+@media (max-width: 650px) {
+  .barber-container {
+    padding: 10px;
+    gap: 15px;
+  }
+}

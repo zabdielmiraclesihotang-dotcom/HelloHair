@@ -1,0 +1,183 @@
+:root {
+  --main-color: #fff;
+  --accent-color: #00ffc3;
+  --transition: 0.25s ease-out;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSimple {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  min-height: 150vh;
+  background: url("bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--main-color);
+  overflow-x: hidden;
+  animation: fadePage 0.8s ease-out both;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 15px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+
+  opacity: 0;
+  animation: slideLeft 0.7s ease-out 0.2s forwards;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.booking-header {
+  text-align: center;
+  padding: 25px 15px;
+
+  opacity: 0;
+  animation: fadeDown 0.8s ease-out 0.35s forwards;
+}
+
+.booking-header h1 {
+  margin: 0;
+  font-size: 28px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.booking-header p {
+  margin-top: 5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 20px;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out 0.45s forwards;
+}
+
+.booking-list {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 400px;
+  margin-bottom: 30px;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease-out 0.55s forwards;
+}
+
+.pesanan-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  animation: fadeUp 0.6s ease-out 0.65s forwards;
+}
+
+.pesanan-card span {
+  font-weight: 600;
+}
+
+.pesanan-card button {
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pesanan-card button:hover {
+  background-color: #00e6ae;
+  transform: translateY(-2px);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  opacity: 0;
+  animation: fadeSimple 0.9s ease-out 0.7s forwards;
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  opacity: 0;
+  animation: fadeSimple 0.9s ease-out 0.8s forwards;
+}

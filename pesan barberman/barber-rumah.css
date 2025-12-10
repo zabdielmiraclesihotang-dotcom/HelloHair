@@ -1,0 +1,234 @@
+:root {
+  --main-color: #fff;
+  --accent-color: #00ffc3;
+  --transition: 0.25s ease-out;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSimple {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url("bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--main-color);
+
+  animation: fadePage 0.8s ease-out both;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 15px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+
+  opacity: 0;
+  animation: slideLeft 0.7s ease-out 0.25s forwards;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.booking-header {
+  text-align: center;
+  padding: 30px 15px;
+
+  opacity: 0;
+  animation: fadeDown 0.8s ease-out 0.35s forwards;
+}
+
+.booking-header h1 {
+  margin: 0;
+  font-size: 28px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.booking-header p {
+  margin-top: 5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease-out 0.45s forwards;
+}
+
+.booking-form {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--main-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease-out 0.55s forwards;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 5px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.booking-form input::placeholder {
+  color: #e0e0e0;
+}
+
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form select {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box-pembayaran {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 10px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  animation: fadeSimple 0.6s ease-out 0.65s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-submit {
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background-color: #00e6ae;
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  opacity: 0;
+  animation: fadeSimple 0.8s ease-out 0.8s forwards;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

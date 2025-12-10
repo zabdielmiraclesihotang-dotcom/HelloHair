@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelloHair - Barber ke Rumah</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="barber-rumah.css" />
+  </head>
+
+  <body>
+    <a href="../halaman utama/home.html" class="back-link">← Kembali</a>
+
+    <header class="booking-header">
+      <h1>Pesan Jasa Barberman</h1>
+      <p>Isi data untuk memesan layanan home service</p>
+    </header>
+
+    <main>
+      <form id="barberRumahForm" class="booking-form">
+        <div class="grid-container">
+          <div class="grid-item">
+            <label for="nama">Nama Lengkap:</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama Anda"
+              required
+            />
+
+            <label for="telp">No. Telepon:</label>
+            <input
+              type="tel"
+              id="telp"
+              name="telp"
+              placeholder="08xxxxxxxxxx"
+              required
+            />
+
+            <label for="alamat">Alamat Lengkap:</label>
+            <input
+              type="text"
+              id="alamat"
+              name="alamat"
+              placeholder="Masukkan alamat rumah"
+              required
+            />
+
+            <label for="tanggal">Tanggal Booking:</label>
+            <input type="date" id="tanggal" name="tanggal" required />
+
+            <label for="waktu">Waktu Booking:</label>
+            <input type="time" id="waktu" name="waktu" required />
+          </div>
+
+          <div class="grid-item">
+            <label for="barber">Pilih Barberman:</label>
+            <select id="barber" name="barber" required>
+              <option value="">-- Pilih Barberman --</option>
+            </select>
+
+            <label for="layanan">Pilih Layanan:</label>
+            <select id="layanan" name="layanan" required>
+              <option value="">-- Pilih Layanan --</option>
+            </select>
+
+            <label for="pembayaran">Metode Pembayaran:</label>
+            <select id="pembayaran" name="pembayaran" required>
+              <option value="">-- Pilih Metode --</option>
+              <option value="cod">Bayar di Tempat (COD)</option>
+              <option value="briva">BRIVA Virtual Account</option>
+            </select>
+
+            <div id="boxPembayaran" class="box-pembayaran hidden">
+              <p><strong>Nomor BRIVA:</strong></p>
+              <p
+                id="brivaNumber"
+                style="font-size: 22px; font-weight: bold"
+              ></p>
+
+              <p><strong>Batas Pembayaran:</strong></p>
+              <p id="countdown" style="font-size: 18px; font-weight: bold"></p>
+
+              <button type="button" id="btnSudahBayar" class="btn-submit">
+                Saya Sudah Membayar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Pesan Sekarang</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>© 2025 HelloHair</p>
+      <p>
+        Hubungi Admin:
+        <a href="https://wa.me/6281236053360" target="_blank"
+          >+62 812-3456-7890</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="barber-rumah.js"></script>
+  </body>
+</html>

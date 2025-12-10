@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelloHair - Beranda</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <a
+      href="../profil/profil.html"
+      class="profile-link"
+      aria-label="Lihat Profil"
+    >
+      <img src="icon-user.jpg" alt="Ikon Profil" />
+    </a>
+
+    <header class="branding">
+      <img src="logo.png" alt="Logo HelloHair" class="logo" />
+      <h1>HelloHair</h1>
+      <p>Rambutmu mahkotaMU KIng.</p>
+    </header>
+
+    <main>
+      <div class="menu-grid">
+        <a href="#" class="menu-card" onclick="goTo('tentang-kami')">
+          <div class="icon-circle">
+            <img src="icon-booking.jpg" alt="Ikon Booking Barbershop" />
+          </div>
+          <span>Tentang Kami</span>
+        </a>
+
+        <a href="#" class="menu-card" onclick="goTo('barber-rumah')">
+          <div class="icon-circle">
+            <img src="icon-home.jpg" alt="Ikon Barber ke Rumah" />
+          </div>
+          <span>Panggil Barberman</span>
+        </a>
+
+        <a href="#" class="menu-card" onclick="goTo('daftar-barber')">
+          <div class="icon-circle">
+            <img src="icon-barber-list.jpg" alt="Ikon Daftar Barber" />
+          </div>
+          <span>Daftar Barberman</span>
+        </a>
+
+        <a href="#" class="menu-card" onclick="goTo('lihat-pesanan')">
+          <div class="icon-circle">
+            <img src="lihat-pesanan.jpg" alt="Ikon Pesanan Aktif" />
+          </div>
+          <span>Lihat Pesanan Anda</span>
+        </a>
+
+        <a href="#" class="menu-card" onclick="goTo('riwayat')">
+          <div class="icon-circle">
+            <img src="icon-riwayat.jpg" alt="Ikon Riwayat Booking" />
+          </div>
+          <span>Riwayat Pemesanan</span>
+        </a>
+
+        <a href="#" class="menu-card logout" onclick="logout()">
+          <div class="icon-circle">
+            <img src="icon-logout.jpg" alt="Ikon Logout" />
+          </div>
+          <span>Logout</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 HelloHair</p>
+      <p>
+        Hubungi Admin:
+        <a href="https://wa.me/6281236053360" target="_blank"
+          >+62 812-3456-7890</a
+        >
+      </p>
+    </footer>
+
+    <script src="home.js" defer></script>
+  </body>
+</html>

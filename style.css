@@ -1,0 +1,174 @@
+:root {
+  --main-color: #fff;
+  --accent-color: #00ffc3;
+  --transition: 0.25s ease-out;
+  --glass-bg: rgba(0, 0, 0, 0.6);
+  --glass-blur: 12px;
+  --card-width: 380px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--main-color);
+  animation: fadeIn 0.6s ease-out both;
+  flex-direction: column;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--main-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.login-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 18px;
+  padding: 30px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--main-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: var(--transition);
+}
+
+input::placeholder {
+  color: #e0e0e0;
+}
+
+input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  color: #000;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.btn:hover {
+  background-color: #00e6ae;
+  transform: translateY(-2px);
+}
+
+.register {
+  font-size: 13px;
+  text-align: center;
+}
+
+.register a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
+}
